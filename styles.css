@@ -264,6 +264,30 @@ form input {
 }
 
 /* ====== Пошук та сортування ====== */
+select {
+  appearance: none; /* Скидання стилів браузера */
+  -webkit-appearance: none; /* Для Safari */
+  -moz-appearance: none; /* Для Firefox */
+  background-color: var(--primary-color); /* Уніфікований фон */
+  color: var(--text-color); /* Уніфікований текст */
+  border: 2px solid var(--accent-color); /* Стандартна рамка */
+  border-radius: 5px; /* Закруглені кути */
+  padding: 10px 12px; /* Внутрішні відступи */
+  font-size: 1rem; /* Розмір тексту */
+  width: 200px; /* Фіксована ширина */
+  transition: all 0.3s ease; /* Плавний перехід */
+}
+
+select:hover {
+  background-color: var(--secondary-color); /* Зміна фону при наведенні */
+  border-color: var(--accent-hover-color); /* Зміна кольору рамки */
+}
+
+select:focus {
+  outline: none; /* Видалення стандартного обрамлення */
+  box-shadow: 0 0 5px rgba(245, 55, 8, 0.5); /* Ефект підсвічування */
+}
+
 #sort-options,
 #filter-options {
   background-color: var(--primary-color);

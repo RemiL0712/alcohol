@@ -317,29 +317,33 @@ filterOptions.addEventListener("change", (e) => {
 
 // Функція для сортування товарів
 function sortProducts(criteria) {
-  // Сортуємо весь асортимент `filteredProducts`, а не тільки видимі на сторінці
-  filteredProducts.sort((a, b) => {
-    const nameA = a.name.toLowerCase();
-    const nameB = b.name.toLowerCase();
-    const priceA = a.price;
-    const priceB = b.price;
+  if (criteria === "all") {
+      // Показуємо всі продукти без сортування
+      filteredProducts = [...filteredProducts]; // Залишаємо масив без змін
+  } else {
+      filteredProducts.sort((a, b) => {
+          const nameA = a.name.toLowerCase();
+          const nameB = b.name.toLowerCase();
+          const priceA = a.price;
+          const priceB = b.price;
 
-    switch (criteria) {
-      case "name-asc":
-        return nameA.localeCompare(nameB);
-      case "name-desc":
-        return nameB.localeCompare(nameA);
-      case "price-asc":
-        return priceA - priceB;
-      case "price-desc":
-        return priceB - priceA;
-      default:
-        return 0;
-    }
-  });
+          switch (criteria) {
+              case "name-asc":
+                  return nameA.localeCompare(nameB);
+              case "name-desc":
+                  return nameB.localeCompare(nameA);
+              case "price-asc":
+                  return priceA - priceB;
+              case "price-desc":
+                  return priceB - priceA;
+              default:
+                  return 0;
+          }
+      });
+  }
 
-  // Після сортування оновлюємо відображення
-  currentPage = 1; // Повертаємося на першу сторінку
+  // Оновлюємо відображення
+  currentPage = 1; // Скидаємо на першу сторінку
   displayProducts(filteredProducts, currentPage); // Відображаємо продукти
   setupPagination(filteredProducts); // Оновлюємо пагінацію
 }
