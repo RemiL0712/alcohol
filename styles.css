@@ -292,6 +292,7 @@ form input {
   margin-left: 20px; /* Відступ від інших елементів */
 }
 
+
 #search-icon:hover {
   transform: scale(1.2);
   color: var(--accent-color);
@@ -299,20 +300,29 @@ form input {
 
 /* Поле вводу пошуку */
 #search-input {
-  display: none; /* Сховане за замовчуванням */
+  display: none; /* Поле приховане за замовчуванням */
   position: absolute;
-  right: 0;
-  top: 50%;
+  right: 10px; /* Поле вирівнюється праворуч */
+  top: 50%; /* Центруємо по вертикалі */
   transform: translateY(-50%);
   background-color: var(--primary-color);
   color: var(--text-color);
-  border: 2px solid var(--accent-color);
+  border: 1px solid var(--accent-color); /* Тонший бордер */
   border-radius: 5px;
-  padding: 8px 12px;
-  width: 200px;
-  transition: all 0.3s ease;
-  z-index: 1000; /* Поверх усіх інших елементів */
+  padding: 10px; /* Більший внутрішній відступ для читабельності */
+  width: 220px; /* Збільшена ширина */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Плавний перехід */
+  opacity: 0; /* Невидиме за замовчуванням */
+  visibility: hidden; /* Приховано */
 }
+
+#search-input.active {
+  display: block;
+  opacity: 1; /* Видиме поле */
+  visibility: visible; /* Видимість */
+}
+
+
 
 #search-input.active {
   display: block; /* Відображається при натисканні */
