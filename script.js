@@ -76,59 +76,14 @@ document.getElementById("cart-popup-checkout").addEventListener("click", () => {
   location.href = 'checkout/checkout.html';
 });
 
-
-// Функція для завантаження продуктів з JSON - файлу
-// function loadProducts() {
-//   fetch('products.json')
-//     .then(response => response.json())
-//     .then(products => {
-//       // Очищення поточного списку продуктів
-//       productList.innerHTML = '';
-
-//       // Створення картки товару для кожного продукту
-//       function loadProducts() {
-//         fetch('products.json')
-//           .then(response => response.json())
-//           .then(products => {
-//             console.log('Products:', products); // Перевірка завантажених даних
-//             productList.innerHTML = ''; // Очищення списку продуктів
-
-//             products.forEach(product => {
-//               console.log('Adding product:', product); // Відстеження додавання продуктів
-//               const productDiv = document.createElement('div');
-//               productDiv.classList.add('productProto', product.category);
-//               productDiv.innerHTML = `
-//                 <img src="${product.image}" alt="${product.name}" class="productProto__img">
-//                 <h3 class="productProto__title">${product.name}</h3>
-//                 <p class="productProto__price">Ціна: ${product.price} грн</p>
-//                 <div class="productProto__priceButton quantity-container">
-//                   <button class="quantity-btn decrease" data-id="${product.id}">-</button>
-//                   <input type="number" class="quantity-input" value="1" min="1" data-id="${product.id}">
-//                   <button class="quantity-btn increase" data-id="${product.id}">+</button>
-//                 </div>
-//                 <button class="add-to-cart" data-id="${product.id}" data-price="${product.price}" data-name="${product.name}">
-//                   Додати в кошик
-//                 </button>
-//               `;
-//               productList.appendChild(productDiv);
-//             });
-//           })
-//           .catch(error => console.error('Failed to load products:', error));
-//       }
+// Додаємо обробник подій для кнопок "Додати в кошик"
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("add-to-cart")) {
+      addToCart(event); // Викликаємо функцію додавання товару в кошик
+  }
+});
 
 
-
-//       // Додавання обробників для кнопок +/- зміни кількості
-//       document.querySelectorAll('.quantity-btn').forEach(button => {
-//         button.addEventListener('click', updateQuantity);
-//       });
-
-//       // Додавання обробників для кнопок додавання в кошик
-//       document.querySelectorAll('.add-to-cart').forEach(button => {
-//         button.addEventListener('click', addToCart);
-//       });
-//     });
-// }
 
 let productsPerPage = 8; // Кількість продуктів на сторінці
 let currentPage = 1; // Поточна сторінка
@@ -183,13 +138,19 @@ function setupPagination(products) {
 
 // Завантаження продуктів із JSON
 function loadProducts() {
-  fetch('products.json')
-    .then(response => response.json())
-    .then(products => {
-      filteredProducts = products; // Зберігаємо всі продукти у фільтрованому масиві
-      displayProducts(filteredProducts, currentPage);
-      setupPagination(filteredProducts);
-    });
+  fetch('products.json') // Переконайтесь, що шлях до файлу правильний
+      .then(response => {
+          if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+      })
+      .then(products => {
+          filteredProducts = products; // Зберігаємо продукти
+          displayProducts(filteredProducts, currentPage);
+          setupPagination(filteredProducts);
+      })
+      .catch(error => console.error("Помилка завантаження продуктів:", error));
 }
 
 
@@ -219,6 +180,12 @@ function updateQuantity(event) {
     input.value = currentValue - 1;
   }
 }
+// Додаємо обробники подій для кнопок збільшення/зменшення кількості
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("increase") || event.target.classList.contains("decrease")) {
+      updateQuantity(event); // Викликаємо функцію оновлення кількості
+  }
+});
 
 
 // Функція для оновлення відображення кошика
