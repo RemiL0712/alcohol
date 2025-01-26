@@ -85,7 +85,7 @@ function displayProducts(products, page = 1) {
   const startIndex = (page - 1) * productsPerPage;
   const endIndex = startIndex + productsPerPage;
 
-  productList.innerHTML = ''; // Очищення поточного списку
+  productList.innerHTML = ''; // Очищуємо попередній список продуктів
   products.slice(startIndex, endIndex).forEach(product => {
     const productDiv = document.createElement('div');
     productDiv.classList.add('productProto', product.category);
@@ -105,20 +105,22 @@ function displayProducts(products, page = 1) {
     productList.appendChild(productDiv);
   });
 
+  // Додаємо обробники для кнопок "Додати в кошик"
   document.querySelectorAll('.add-to-cart').forEach(button => {
     button.addEventListener('click', (event) => {
       addToCart(event);
     });
   });
-  
+
+  // Обробники для зміни кількості товарів
   document.querySelectorAll('.increase').forEach(button => {
     button.addEventListener('click', updateQuantity);
   });
-  
   document.querySelectorAll('.decrease').forEach(button => {
     button.addEventListener('click', updateQuantity);
   });
 }
+
 
 
 // Налаштування пагінації
@@ -126,7 +128,7 @@ function setupPagination(products) {
   const pagination = document.getElementById('pagination');
   const totalPages = Math.ceil(products.length / productsPerPage);
 
-  pagination.innerHTML = '';
+  pagination.innerHTML = ''; // Очищуємо попередні кнопки пагінації
   for (let i = 1; i <= totalPages; i++) {
     const pageButton = document.createElement('button');
     pageButton.textContent = i;
@@ -134,25 +136,24 @@ function setupPagination(products) {
     if (i === currentPage) pageButton.classList.add('active');
     pageButton.addEventListener('click', () => {
       currentPage = i;
-      displayProducts(products, currentPage);
+      displayProducts(products, currentPage); // Відображаємо продукти для обраної сторінки
       setupPagination(products); // Оновлюємо кнопки пагінації
     });
     pagination.appendChild(pageButton);
   }
 }
 
+
 // Завантаження продуктів із JSON
 function loadProducts() {
   fetch('products.json')
     .then(response => response.json())
     .then(products => {
-      filteredProducts = products; // Зберігаємо всі продукти у фільтрованому масиві
+      filteredProducts = products; // Зберігаємо продукти глобально
       displayProducts(filteredProducts, currentPage);
       setupPagination(filteredProducts);
     });
 }
-
-
 // Оновлення кількості продуктів на основі ширини екрану
 function updateProductsPerPage() {
   if (window.innerWidth <= 768) {
@@ -202,18 +203,28 @@ function updateCart() {
 }
 
 // Додавання події введення тексту у пошукове поле
+function loadProducts() {
+  fetch('products.json')
+    .then(response => response.json())
+    .then(products => {
+      filteredProducts = products; // Зберігаємо продукти глобально
+      displayProducts(filteredProducts, currentPage);
+      setupPagination(filteredProducts);
+    });
+}
 searchInput.addEventListener("input", () => {
   const searchText = searchInput.value.toLowerCase().trim();
 
-  // Фільтруємо продукти за текстом пошуку
-  const searchedProducts = filteredProducts.filter(product => 
+  // Фільтруємо продукти за текстом пошуку на основі вже відфільтрованого списку
+  const searchedProducts = filteredProducts.filter(product =>
     product.name.toLowerCase().includes(searchText)
   );
 
-  currentPage = 1; // Скидаємо на першу сторінку
-  displayProducts(searchedProducts, currentPage);
-  setupPagination(searchedProducts); // Оновлюємо пагінацію
+  currentPage = 1; // Повертаємося до першої сторінки
+  setupPagination(searchedProducts); // Оновлюємо кнопки пагінації
+  displayProducts(searchedProducts, currentPage); // Відображаємо результат
 });
+
 
 
 // Функція для фільтрації товарів
@@ -223,17 +234,18 @@ function filterProducts(category) {
   fetch('products.json')
     .then(response => response.json())
     .then(products => {
-      // Фільтрація продуктів за категорією
+      // Зберігаємо відфільтровані продукти в глобальній змінній
       filteredProducts = category === "all" 
         ? products 
         : products.filter(product => product.category === category);
 
-      currentPage = 1; // Скидаємо на першу сторінку
-      displayProducts(filteredProducts, currentPage); // Оновлюємо відображення
-      setupPagination(filteredProducts); // Оновлюємо пагінацію
+      currentPage = 1; // Скидаємо пагінацію на першу сторінку
+      setupPagination(filteredProducts); // Оновлюємо кнопки пагінації
+      displayProducts(filteredProducts, currentPage); // Відображаємо продукти для поточної сторінки
     })
-    .catch(error => console.error("Error filtering products:", error));
+    .catch(error => console.error("Помилка при фільтрації:", error));
 }
+
 
 
 // Додаємо обробник подій для зміни фільтра
