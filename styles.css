@@ -31,6 +31,11 @@ header {
   /* Додаємо тінь для об'єму */
 }
 
+.logo {
+  flex-shrink: 0; /* Фіксуємо розмір логотипа, щоб він не стискався */
+}
+
+
 .logo img {
   height: 50px;
   transition: transform 0.3s ease;
@@ -40,14 +45,14 @@ header {
   transform: scale(1.1);
   /* Легкий ефект збільшення при наведенні */
 }
-
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
-  /* Трохи зменшуємо відстань */
+  gap: 20px; /* Відстань між пунктами меню */
   padding: 0;
   margin: 0;
+  justify-content: center;
+  flex-grow: 1; /* Для розподілу простору між логотипом і меню */
 }
 
 nav ul li {
@@ -270,31 +275,47 @@ form input {
   margin-bottom: 10px;
 }
 
-#search-input {
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  padding: 10px;
-  /* Відступи для тексту */
-  border: 2px solid var(--accent-color);
-  /* Виділення рамки */
-  border-radius: 5px;
-  width: 100%;
-  /* Поле займає всю ширину контейнера */
-  max-width: 500px;
-  /* Обмежуємо максимальну ширину */
-  margin-bottom: 10px;
-  outline: none;
-  box-sizing: border-box;
-  /* Коректний підрахунок ширини */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  /* Додаємо плавний ефект */
+/* Контейнер пошуку в хедері */
+#search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
-#search-input:focus {
-  border-color: var(--accent-hover-color);
-  /* Зміна кольору рамки при фокусі */
-  box-shadow: 0 0 10px rgba(245, 55, 8, 0.5);
-  /* Додаємо тінь при фокусі */
+#search-icon {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+  margin-left: 20px; /* Відступ від інших елементів */
+}
+
+#search-icon:hover {
+  transform: scale(1.2);
+  color: var(--accent-color);
+}
+
+/* Поле вводу пошуку */
+#search-input {
+  display: none; /* Сховане за замовчуванням */
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 5px;
+  padding: 8px 12px;
+  width: 200px;
+  transition: all 0.3s ease;
+  z-index: 1000; /* Поверх усіх інших елементів */
+}
+
+#search-input.active {
+  display: block; /* Відображається при натисканні */
 }
 
 

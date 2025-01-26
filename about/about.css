@@ -8,7 +8,7 @@
   }
   
   /* ====== Базові стилі ====== */
-  body {
+  body { 
     font-family: Arial, sans-serif;
     background-color: var(--secondary-color);
     color: var(--text-color);
@@ -19,15 +19,20 @@
   /* ====== Шапка сайту ====== */
   header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Логотип зліва, меню справа */
+    align-items: center; /* Центрування по вертикалі */
     padding: 15px 30px;
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  }
+}
+.logo {
+  flex-shrink: 0; /* Фіксуємо розмір логотипа, щоб він не стискався */
+}
+
+
   
   .logo img {
     height: 50px;
@@ -38,14 +43,21 @@
     transform: scale(1.1);
   }
   
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-  }
-  
+  nav {
+    flex-grow: 1; /* Додаємо, щоб меню займало центральну частину */
+    text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Відстань між пунктами меню */
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  flex-grow: 1; /* Для розподілу простору між логотипом і меню */
+}
+
   nav ul li {
     position: relative;
   }
@@ -69,6 +81,7 @@
     background-color: var(--accent-color);
     color: #fff;
   }
+
   
   /* ====== Основний контент ====== */
   main {

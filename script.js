@@ -11,12 +11,47 @@ const orderNumberElement = document.getElementById("order-number");
 const productList = document.querySelector(".product-list");
 const sortOptions = document.getElementById("sort-options");
 const filterOptions = document.getElementById("filter-options");
-const searchInput = document.getElementById("search-input");
 const cartIcon = document.getElementById("cart-icon");
 const cartPopup = document.getElementById("cart-popup");
 const cartPopupItems = document.getElementById("cart-popup-items");
 const cartPopupTotal = document.getElementById("cart-popup-total");
 const cartCount = document.getElementById("cart-count");
+// Доступ до елементів пошуку
+const searchIcon = document.getElementById('search-icon'); // Іконка лупи
+const searchInput = document.getElementById('search-input'); // Поле вводу пошуку
+
+// Відображення/приховування поля пошуку
+searchIcon.addEventListener('click', () => {
+  searchInput.classList.toggle('active'); // Перемикаємо видимість поля
+  if (searchInput.classList.contains('active')) {
+    searchInput.focus(); // Фокусуємо поле пошуку
+  } else {
+    searchInput.value = ''; // Очищаємо текст при закритті
+    resetSearchResults(); // Повертаємо весь список товарів
+  }
+});
+
+// Обробка пошуку
+searchInput.addEventListener('input', () => {
+  const searchText = searchInput.value.toLowerCase().trim(); // Отримуємо текст із поля пошуку
+
+  // Фільтруємо товари на основі пошуку
+  const searchedProducts = filteredProducts.filter(product =>
+    product.name.toLowerCase().includes(searchText)
+  );
+
+  // Оновлюємо відображення товарів
+  currentPage = 1; // Повертаємося на першу сторінку
+  setupPagination(searchedProducts); // Оновлюємо кнопки пагінації
+  displayProducts(searchedProducts, currentPage); // Відображаємо результати
+});
+
+// Скидання пошуку
+function resetSearchResults() {
+  displayProducts(filteredProducts, currentPage); // Відображаємо весь асортимент
+  setupPagination(filteredProducts); // Оновлюємо кнопки пагінації
+}
+
 
 
 // Додаємо подію для відображення/приховування спливаючого вікна
@@ -249,18 +284,6 @@ function loadProducts() {
       setupPagination(filteredProducts);
     });
 }
-searchInput.addEventListener("input", () => {
-  const searchText = searchInput.value.toLowerCase().trim();
-
-  // Фільтруємо продукти за текстом пошуку на основі вже відфільтрованого списку
-  const searchedProducts = filteredProducts.filter(product =>
-    product.name.toLowerCase().includes(searchText)
-  );
-
-  currentPage = 1; // Повертаємося до першої сторінки
-  setupPagination(searchedProducts); // Оновлюємо кнопки пагінації
-  displayProducts(searchedProducts, currentPage); // Відображаємо результат
-});
 
 
 
