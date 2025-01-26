@@ -9,7 +9,7 @@
 
 /* ====== Базові стилі ====== */
 body {
-  font-family: Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background-color: var(--secondary-color);
   color: var(--text-color);
   margin: 0;
@@ -539,6 +539,11 @@ footer .social-icons a:hover {
 
 @media (max-width: 768px) {
   .product-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .product-list {
     grid-template-columns: repeat(2, 1fr); /* 2 картки в рядку */
     gap: 20px;
     padding: 10px;
@@ -554,6 +559,11 @@ footer .social-icons a:hover {
 }
 
 @media (max-width: 768px) {
+  .product-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
 
   /* Список продуктів: адаптація до однієї колонки */
   #search-input,

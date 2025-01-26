@@ -155,7 +155,9 @@ function loadProducts() {
 
 // Оновлення кількості продуктів на основі ширини екрану
 function updateProductsPerPage() {
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 480) {
+    productsPerPage = 1;
+  } else if (window.innerWidth <= 768) {
     productsPerPage = 4;
   } else {
     productsPerPage = 8;
