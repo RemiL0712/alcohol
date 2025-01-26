@@ -73,7 +73,7 @@ function addToCart(event) {
   updateCartPopup(); // Оновлення вмісту кошика
 }
 document.getElementById("cart-popup-checkout").addEventListener("click", () => {
-  location.href = '../checkout/checkout.html';
+  location.href = 'checkout/checkout.html';
 });
 
 
@@ -336,7 +336,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (checkoutButton) {
     checkoutButton.addEventListener("click", () => {
-      location.href = '../checkout/checkout.html';
+      location.href = 'checkout/checkout.html';
     });
   } else {
     console.error("Element with id 'cart-popup-checkout' not found.");
