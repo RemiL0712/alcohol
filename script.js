@@ -9,6 +9,8 @@ const cartPopup = document.getElementById("cart-popup");
 const cartIcon = document.getElementById("cart-icon");
 const productList = document.querySelector(".product-list");
 
+
+
 // Перевірка наявності ключових елементів
 if (!cartItems || !totalPriceElement || !cartCount || !cartPopup || !cartIcon || !productList) {
     console.error("Ключові елементи для кошика не знайдено в DOM!");
@@ -142,4 +144,67 @@ if (cartIcon) {
     cartIcon.addEventListener("click", () => {
         cartPopup.style.display = cartPopup.style.display === "none" || !cartPopup.style.display ? "block" : "none";
     });
+}
+// Сортування продуктів
+function sortProducts(products, criteria) {
+  return products.sort((a, b) => {
+      if (criteria === 'name-asc') {
+          return a.name.localeCompare(b.name);
+      } else if (criteria === 'name-desc') {
+          return b.name.localeCompare(a.name);
+      } else if (criteria === 'price-asc') {
+          return a.price - b.price;
+      } else if (criteria === 'price-desc') {
+          return b.price - a.price;
+      }
+      return 0;
+  });
+}
+
+// Фільтрація продуктів
+function filterProducts(products, category) {
+  if (category === 'all') {
+      return products;
+  }
+  return products.filter(product => product.category === category);
+}
+
+// Пошук продуктів
+function searchProducts(products, query) {
+  return products.filter(product => product.name.toLowerCase().includes(query.toLowerCase()));
+}
+
+// Оновлення продуктів із фільтрацією, сортуванням та пошуком
+function updateDisplayedProducts(products) {
+  const sortOption = document.getElementById("sort-options").value;
+  const filterOption = document.getElementById("filter-options").value;
+  const searchQuery = document.getElementById("search-input").value;
+
+  let filteredProducts = filterProducts(products, filterOption);
+  filteredProducts = searchProducts(filteredProducts, searchQuery);
+  const sortedProducts = sortProducts(filteredProducts, sortOption);
+
+  displayProducts(sortedProducts);
+}
+
+// Додавання обробників подій для фільтрації та сортування
+document.getElementById("sort-options").addEventListener("change", () => updateDisplayedProducts(allProducts));
+document.getElementById("filter-options").addEventListener("change", () => updateDisplayedProducts(allProducts));
+document.getElementById("search-input").addEventListener("input", () => updateDisplayedProducts(allProducts));
+
+// Збереження завантажених продуктів для фільтрації та сортування
+let allProducts = [];
+function loadProducts() {
+  fetch('products.json')
+      .then(response => {
+          if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+      })
+      .then(products => {
+          allProducts = products;
+          updateDisplayedProducts(products);
+      })
+      .catch(error => console.error("Помилка завантаження продуктів:", error));
 }
