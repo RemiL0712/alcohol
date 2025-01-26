@@ -27,7 +27,7 @@ if (cartIcon) {
 
 // Оновлення вмісту кошика
 function updateCartPopup() {
-    cartPopupItems.innerHTML = cart.map((item, index) => `
+    cartItems.innerHTML = cart.map((item, index) => `
         <div class="cart-item">
             <p>${item.name} - ${item.price} грн × ${item.quantity} = ${item.price * item.quantity} грн</p>
             <button class="deleteButton" data-index="${index}">Видалити</button>
@@ -35,7 +35,7 @@ function updateCartPopup() {
     `).join("");
 
     const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    cartPopupTotal.textContent = `Загальна сума: ${totalPrice} грн`;
+    totalPriceElement.textContent = `Загальна сума: ${totalPrice} грн`;
 
     cartCount.textContent = cart.reduce((count, item) => count + item.quantity, 0);
 
