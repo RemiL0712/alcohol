@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Підтвердження замовлення — Drink King</title>
+    <link rel="stylesheet" href="confirmation.css">
+    <script>
+        // Generate a random order number
+        function generateOrderNumber() {
+            const orderNumber = Math.floor(Math.random() * 1000000) + 1;
+            document.getElementById("order-number").textContent = orderNumber;
+        }
+        window.onload = generateOrderNumber;
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo.jpg" alt="Drink King">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">На головну</a></li>
+                <li><a href="../about/about.html">Про нас</a></li>
+                <li><a href="../products/products.html">Продукція</a></li>
+                <li><a href="../contact/contact.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Замовлення підтверджено!</h1>
+        <p>Ваш номер замовлення: <span id="order-number"></span></p>
+        <button onclick="location.href='../index/index.html'" id="return-home">На головну</button>
+    </main>
+    <footer>
+        <p>Drink King — ваш надійний партнер для свят та особливих моментів!</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drink King — Магазин алкогольних напоїв</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="../img/logo.jpg" alt="Drink King">
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">На головну</a></li>
+        <li><a href="../about/about.html">Про нас</a></li>
+        <li><a href="../products/products.html">Продукція</a></li>
+        <li><a href="../contact/contact.html">Контакти</a></li>
+      </ul>
+    </nav>
+
+  </header>
+  <!-- Іконка кошика -->
+  <div id="cart-icon-container">
+    <button id="cart-icon">
+      <!-- Значок кошика -->
+      <i class="fas fa-shopping-cart"></i>
+      <!-- Лічильник кількості товарів -->
+      <span id="cart-count">0</span>
+    </button>
+  </div>
+
+  <!-- Спливаюче вікно кошика -->
+  <div id="cart-popup">
+    <h3>Ваш кошик</h3>
+    <div id="cart-popup-items"></div>
+    <p id="cart-popup-total">Загальна сума: 0 грн</p>
+    <button id="cart-popup-checkout">Оформити замовлення</button>
+  </div>
+
+
+  <main>
+    <section id="about">
+      <h1>Drink King</h1>
+      <p>Drink King — це магазин алкогольних напоїв, де кожен знайде щось для себе. У нашому асортименті зібрано
+        найкращі вина, міцні напої та ексклюзивні коктейлі з усього світу.</p>
+      <h4>Ціни актуальні виключно для сайту</h4>
+      <p>Етикетка та форма пляшки на фото можуть відрізнятися від фактичного.<br>
+        Надмірне споживання алкоголю шкідливе для вашого здоров'я.<br>
+        Придбати алкогольну продукцію можуть лише особи, яким виповнилося 18 років.</p>
+      <h4>Мінімальна сума замовлення 500 грн</h4>
+    </section>
+    <section id="products">
+      <h2>Наш асортимент</h2>
+
+      <label for="search-input">Пошук:</label>
+      <section id="search-container">
+        <input type="text" id="search-input" placeholder="Введіть назву товару">
+      </section>
+
+
+      <label for="sort-options">Сортувати за:</label>
+      <select id="sort-options">
+        <option value="name-asc">Назва (А-Я)</option>
+        <option value="name-desc">Назва (Я-А)</option>
+        <option value="price-asc">Ціна (зростання)</option>
+        <option value="price-desc">Ціна (спадання)</option>
+      </select>
+
+      <label for="filter-options">Фільтрувати за категоріями:</label>
+      <select id="filter-options">
+        <option value="all">Всі</option>
+        <option value="armaniak">Арманіяк</option>
+        <option value="brendi">Бренді</option>
+        <option value="vine">Вино</option>
+        <option value="vermouth">Вермут</option>
+      </select>
+      <div class="product-list"></div>
+      <div id="pagination"></div>
+    </section>
+
+    <section id="order-form" style="display:none;">
+      <h2>Оформлення замовлення</h2>
+      <form id="order-form-element">
+        <label>Ім'я: <input type="text" id="name" name="name" autocomplete="name" required></label>
+        <label>Телефон: <input type="tel" id="phone" name="phone" autocomplete="tel" required></label>
+        <label>Адреса: <input type="text" id="address" name="address" autocomplete="street-address" required></label>
+        <button type="submit">Підтвердити</button>
+      </form>
+
+    </section>
+    <section id="confirmation" style="display:none;">
+      <h2>Замовлення підтверджено!</h2>
+      <p>Ваш номер замовлення: <span id="order-number"></span></p>
+      <button id="return-home">На головну</button>
+    </section>
+  </main>
+  <footer>
+    <p>Drink King — ваш надійний партнер для свят та особливих моментів!</p>
+    <div class="social-icons">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p>© 2025 Drink King. Всі права захищені.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

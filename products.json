@@ -1,0 +1,340 @@
+[
+  {
+    "id": 1,
+    "name": "Арманіяк Chateau de Pellehaut L'Age Tendre 0.7 л",
+    "price": 1380,
+    "category": "armaniak",
+    "image": "../img/armaniak/1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Арманіяк Chateau de Pellehaut L'Age de Glace 0.7 л",
+    "price": 1150,
+    "category": "armaniak",
+    "image": "../img/armaniak/2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Арманіяк Saint-Vivant 0.7 л",
+    "price": 1299,
+    "category": "armaniak",
+    "image": "../img/armaniak/3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Арманіяк Chateau De Pellehaut Collection 0.7 л",
+    "price": 2150,
+    "category": "armaniak",
+    "image": "../img/armaniak/4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Арманіяк Saint-Vivant XO 0.7 л",
+    "price": 2569,
+    "category": "armaniak",
+    "image": "../img/armaniak/5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Арманіяк Saint-Vivant NAPOLEON 0.7 л",
+    "price": 1415,
+    "category": "armaniak",
+    "image": "../img/armaniak/6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Арманіяк Clos Martin XO 0.7 л",
+    "price": 1999,
+    "category": "armaniak",
+    "image": "../img/armaniak/7.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Арманіяк Clos Martin VSOP 0.7 л",
+    "price": 1599,
+    "category": "armaniak",
+    "image": "../img/armaniak/8.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Арманіяк Clos Martin Vintage 1964 0.7 л",
+    "price": 12589,
+    "category": "armaniak",
+    "image": "../img/armaniak/9.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Арманіяк Clos Martin Vintage 1989 0.7 л",
+    "price": 3250,
+    "category": "armaniak",
+    "image": "../img/armaniak/10.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Бренді Вірменський Афродіта 5 років у коробці 0.5 л",
+    "price": 499,
+    "category": "brendi",
+    "image": "../img/brendi/1.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Спиртний напій Aznauri Wild Cherry 5 років 0.5 л",
+    "price": 151,
+    "category": "brendi",
+    "image": "../img/brendi/2.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Бренді Torres Double Barrel 10 років у коробці 0.7 л",
+    "price": 899,
+    "category": "brendi",
+    "image": "../img/brendi/3.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Бренді Alexandrion 7 років 0.7 л",
+    "price": 465,
+    "category": "brendi",
+    "image": "../img/brendi/4.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Бренді Alexandrion 5 років 0.5 л",
+    "price": 269,
+    "category": "brendi",
+    "image": "../img/brendi/5.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Бренді Хент 15 років у коробці 0.5 л",
+    "price": 1499,
+    "category": "brendi",
+    "image": "../img/brendi/6.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Бренді Alexandrion 5 років 0.7 л",
+    "price": 299,
+    "category": "brendi",
+    "image": "../img/brendi/7.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Бренді Вірменський Булава 5 років у коробці 0.5 л",
+    "price": 499,
+    "category": "brendi",
+    "image": "../img/brendi/8.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Бренді Прошян 3 роки у коробці 0.5 л",
+    "price": 349,
+    "category": "brendi",
+    "image": "../img/brendi/9.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Бренді Hardy Napoleon de Pourvil 0.7 л",
+    "price": 469,
+    "category": "brendi",
+    "image": "../img/brendi/10.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Бренді Jules Larose & Cie VSOP 0.5 л",
+    "price": 319,
+    "category": "brendi",
+    "image": "../img/brendi/11.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Бренді Le Sage VSOP 5 років 0.5 л",
+    "price": 389,
+    "category": "brendi",
+    "image": "../img/brendi/12.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Бренді Вірменський Кінь 5 років у коробці 0.5 л",
+    "price": 589,
+    "category": "brendi",
+    "image": "../img/brendi/13.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Бренді Torres Smoked Barrel 10 років у коробці 0.7 л",
+    "price": 1099,
+    "category": "brendi",
+    "image": "../img/brendi/14.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Бренді Царівна Анна 8 років у коробці 0.5 л",
+    "price": 659,
+    "category": "brendi",
+    "image": "../img/brendi/15.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Бренді Alexandrion Greek Orange 0.7 л",
+    "price": 399,
+    "category": "brendi",
+    "image": "../img/brendi/16.jpg"
+  },
+  {
+    "id": 27,
+    "name": "Вино Fazan Prosecco Vino Spumante Extra Dry Біле Сухе 0.75 л NEW",
+    "price": 319,
+    "category": "vine",
+    "image": "../img/vine/1.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Вино Martini Asti Біле Солодке 0.75 л",
+    "price": 470,
+    "category": "vine",
+    "image": "../img/vine/2.jpg"
+  },
+  {
+    "id": 29,
+    "name": "Вино Kurni Marche IGT 2021 Червоне Сухе 0.75 л",
+    "price": 5290,
+    "category": "vine",
+    "image": "../img/vine/3.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Вино Fratelli Fragolino Bianco напій б/а.сил/г аром.0.75 л",
+    "price": 129,
+    "category": "vine",
+    "image": "../img/vine/4.jpg"
+  },
+  {
+    "id": 31,
+    "name": "Вино Fratelli Fragolino Bianco Біле Напівсолодке 0.75 л",
+    "price": 149,
+    "category": "vine",
+    "image": "../img/vine/5.jpg"
+  },
+  {
+    "id": 32,
+    "name": "Вино Maskatto MPF Bianco Біле Солодке 0.75 л",
+    "price": 205,
+    "category": "vine",
+    "image": "../img/vine/6.jpg"
+  },
+  {
+    "id": 33,
+    "name": "Вино Mondoro Asti Біле Солодке 0.75 л",
+    "price": 598,
+    "category": "vine",
+    "image": "../img/vine/7.jpg"
+  },
+  {
+    "id": 34,
+    "name": "Вино Latinium Sparkling Біле Напівсолодке 0.75 л",
+    "price": 320,
+    "category": "vine",
+    "image": "../img/vine/8.jpg"
+  },
+  {
+    "id": 35,
+    "name": "Вино Сангрія CLAUDIO Червона Напівсолодка 1.5 л",
+    "price": 265,
+    "category": "vine",
+    "image": "../img/vine/9.jpg"
+  },
+  {
+    "id": 36,
+    "name": "Вино Asti Contessa Chiara DOCG Біле Солодке 0.75 л",
+    "price": 399,
+    "category": "vine",
+    "image": "../img/vine/10.jpg"
+  },
+  {
+    "id": 37,
+    "name": "Вино Sarsitano Fragolino Bianco Біле Солодке 0.75 л",
+    "price": 210,
+    "category": "vine",
+    "image": "../img/vine/11.jpg"
+  },
+  {
+    "id": 38,
+    "name": "Вино Askaneli Кіндзмараулі Червоне Напівсолодке 0.75 л",
+    "price": 349,
+    "category": "vine",
+    "image": "../img/vine/12.jpg"
+  },
+  {
+    "id": 39,
+    "name": "Вермут Martini BIANCO Білий Солодкий 1 л",
+    "price": 425,
+    "category": "vermouth",
+    "image": "../img/vermouth/1.jpg"
+  },
+  {
+    "id": 40,
+    "name": "Вермут Martini BIANCO Білий Солодкий 0.5 л",
+    "price": 239,
+    "category": "vermouth",
+    "image": "../img/vermouth/2.jpg"
+  },
+  {
+    "id": 41,
+    "name": "Вермут Martini Fiero Червоний Солодкий 0.75 л",
+    "price": 369,
+    "category": "vermouth",
+    "image": "../img/vermouth/3.jpg"
+  },
+  {
+    "id": 42,
+    "name": "Вермут Martini ROSSO Червоний Солодкий 1 л",
+    "price": 429,
+    "category": "vermouth",
+    "image": "../img/vermouth/4.jpg"
+  },
+  {
+    "id": 43,
+    "name": "Вермут Martini BIANCO Білий Солодкий 0.75 л",
+    "price": 339,
+    "category": "vermouth",
+    "image": "../img/vermouth/5.jpg"
+  },
+  {
+    "id": 44,
+    "name": "Вермут Martini EXTRA DRY Білий Сухий 1 л",
+    "price": 429,
+    "category": "vermouth",
+    "image": "../img/vermouth/6.jpg"
+  },
+  {
+    "id": 45,
+    "name": "Вермут Martini EXTRA DRY Білий Сухий 0.5 л",
+    "price": 249,
+    "category": "vermouth",
+    "image": "../img/vermouth/7.jpg"
+  },
+  {
+    "id": 46,
+    "name": "Вермут Martini Fiero з тоніком Червоний Солодкий 0.75 л",
+    "price": 449,
+    "category": "vermouth",
+    "image": "../img/vermouth/8.jpg"
+  },
+  {
+    "id": 47,
+    "name": "Вермут Cinzano Bianco Білий Напівсолодкий 1 л",
+    "price": 419,
+    "category": "vermouth",
+    "image": "../img/vermouth/9.jpg"
+  },
+  {
+    "id": 48,
+    "name": "Вермут Cinzano Bianco Білий Напівсолодкий 0.75 л",
+    "price": 349,
+    "category": "vermouth",
+    "image": "../img/vermouth/10.jpg"
+  }
+  
+  
+]
