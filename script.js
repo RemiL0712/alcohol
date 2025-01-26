@@ -129,19 +129,56 @@ function setupPagination(products) {
   const totalPages = Math.ceil(products.length / productsPerPage);
 
   pagination.innerHTML = ''; // Очищуємо попередні кнопки пагінації
-  for (let i = 1; i <= totalPages; i++) {
+
+  // Додаємо стрілку "Назад", якщо це не перша сторінка
+  if (currentPage > 1) {
+    const prevButton = document.createElement('button');
+    prevButton.textContent = '«';
+    prevButton.classList.add('page-button');
+    prevButton.addEventListener('click', () => {
+      currentPage -= 1;
+      displayProducts(products, currentPage);
+      setupPagination(products);
+    });
+    pagination.appendChild(prevButton);
+  }
+
+  // Діапазон сторінок для відображення
+  const maxPagesToShow = 5;
+  let startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));
+  let endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
+
+  if (endPage - startPage < maxPagesToShow - 1) {
+    startPage = Math.max(1, endPage - maxPagesToShow + 1);
+  }
+
+  for (let i = startPage; i <= endPage; i++) {
     const pageButton = document.createElement('button');
     pageButton.textContent = i;
     pageButton.classList.add('page-button');
     if (i === currentPage) pageButton.classList.add('active');
     pageButton.addEventListener('click', () => {
       currentPage = i;
-      displayProducts(products, currentPage); // Відображаємо продукти для обраної сторінки
-      setupPagination(products); // Оновлюємо кнопки пагінації
+      displayProducts(products, currentPage);
+      setupPagination(products);
     });
     pagination.appendChild(pageButton);
   }
+
+  // Додаємо стрілку "Вперед", якщо це не остання сторінка
+  if (currentPage < totalPages) {
+    const nextButton = document.createElement('button');
+    nextButton.textContent = '»';
+    nextButton.classList.add('page-button');
+    nextButton.addEventListener('click', () => {
+      currentPage += 1;
+      displayProducts(products, currentPage);
+      setupPagination(products);
+    });
+    pagination.appendChild(nextButton);
+  }
 }
+
 
 
 // Завантаження продуктів із JSON
@@ -257,28 +294,39 @@ filterOptions.addEventListener("change", (e) => {
 
 // Функція для сортування товарів
 function sortProducts(criteria) {
-  const productsArray = Array.from(productList.children);
-
-  // Сортуємо продукти за критерієм
-  productsArray.sort((a, b) => {
-    const nameA = a.querySelector(".productProto__title").textContent.trim();
-    const nameB = b.querySelector(".productProto__title").textContent.trim();
-    const priceA = parseFloat(a.querySelector(".productProto__price").textContent.replace(/[^0-9]/g, ""));
-    const priceB = parseFloat(b.querySelector(".productProto__price").textContent.replace(/[^0-9]/g, ""));
+  // Сортуємо весь асортимент `filteredProducts`, а не тільки видимі на сторінці
+  filteredProducts.sort((a, b) => {
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
+    const priceA = a.price;
+    const priceB = b.price;
 
     switch (criteria) {
-      case "name-asc": return nameA.localeCompare(nameB);
-      case "name-desc": return nameB.localeCompare(nameA);
-      case "price-asc": return priceA - priceB;
-      case "price-desc": return priceB - priceA;
-      default: return 0;
+      case "name-asc":
+        return nameA.localeCompare(nameB);
+      case "name-desc":
+        return nameB.localeCompare(nameA);
+      case "price-asc":
+        return priceA - priceB;
+      case "price-desc":
+        return priceB - priceA;
+      default:
+        return 0;
     }
   });
 
-  // Оновлюємо список продуктів
-  productList.innerHTML = "";
-  productsArray.forEach(product => productList.appendChild(product));
+  // Після сортування оновлюємо відображення
+  currentPage = 1; // Повертаємося на першу сторінку
+  displayProducts(filteredProducts, currentPage); // Відображаємо продукти
+  setupPagination(filteredProducts); // Оновлюємо пагінацію
 }
+
+// Додаємо обробник подій для сортування
+sortOptions.addEventListener("change", (e) => {
+  const selectedCriteria = e.target.value;
+  sortProducts(selectedCriteria);
+});
+
 
 // Додаємо обробник подій для зміни сортування
 sortOptions.addEventListener("change", (e) => {
