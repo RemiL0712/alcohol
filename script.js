@@ -111,7 +111,7 @@ document.getElementById("cart-popup-checkout").addEventListener("click", () => {
   location.href = 'checkout/checkout.html';
 });
 
-let productsPerPage = 8; // Кількість продуктів на сторінці
+let productsPerPage = 12; // Кількість продуктів на сторінці
 let currentPage = 1; // Поточна сторінка
 
 // Відображення продуктів для конкретної сторінки

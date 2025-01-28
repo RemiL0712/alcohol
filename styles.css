@@ -21,6 +21,7 @@ body {
   background-repeat: no-repeat, no-repeat;
   background-attachment: fixed;
 }
+
 main {
   background: rgba(0, 0, 0, 0.85);
   padding: 40px;
@@ -116,7 +117,7 @@ button:hover, .add-to-cart:hover {
 /* === Продукти === */
 .product-list {
   display: grid;
-  grid-template-columns: repeat(4, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
   padding: 20px 40px;
 }
@@ -125,7 +126,8 @@ button:hover, .add-to-cart:hover {
   border: 2px solid red;
   background: var(--primary-color);
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
+  margin: 10px 0;
   text-align: center;
   transition: 0.3s ease-in-out;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -133,8 +135,8 @@ button:hover, .add-to-cart:hover {
   flex-direction: column;
   gap: 15px;
   justify-content: space-between; /* Розподіляє простір рівномірно */
-  
 }
+
 .productProto h3, .productProto p {
   flex-grow: 1; /* Змушує текст заповнювати доступний простір */
 }
@@ -459,21 +461,36 @@ footer .social-icons a:hover {
   color: var(--accent-hover-color);
 }
 
-/* ====== Медіа-запити ====== */
-@media (max-width: 1024px) {
+/* ====== Адаптивність ====== */
+@media (max-width: 1200px) {
   .product-list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
+  main {
+    max-width: 90%;
   }
 }
 
 @media (max-width: 768px) {
   .product-list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+  main {
+    max-width: 95%;
+    padding: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .product-list {
     grid-template-columns: 1fr;
+  }
+  .productProto {
+    padding: 10px;
+  }
+  main {
+    max-width: 100%;
+    padding: 8px;
+    font-size: 0.9em;
   }
 }
