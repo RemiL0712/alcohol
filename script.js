@@ -127,7 +127,9 @@ function displayProducts(products, page = 1) {
     productDiv.innerHTML = `
       <img src="${product.image}" alt="${product.name}" class="productProto__img">
       <h3 class="productProto__title">${product.name}</h3>
-      <p class="productProto__price">Ціна: ${product.price} грн</p>
+      <div class="product-price-container">
+        <p class="productProto__price">Ціна: ${product.price} грн</p>
+      </div>  
       <div class="productProto__priceButton quantity-container">
         <button class="quantity-btn decrease" data-id="${product.id}">-</button>
         <input type="number" class="quantity-input" value="1" min="1" data-id="${product.id}">

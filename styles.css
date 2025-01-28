@@ -8,14 +8,27 @@
 }
 
 /* ====== Глобальні стилі ====== */
-body {
-  font-family: Arial, sans-serif;
+
+body { 
+  font-family: Verdana, sans-serif;
   background-color: var(--secondary-color);
   color: var(--text-color);
   margin: 0;
   padding: 0;
+  background-image: url('img/background-image.jpg');
+  background-position: center;
+  background-size: cover; /* Размер изображений */
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed;
 }
-
+main {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 60%;
+  margin: auto;
+}
 h1, h2, h4 {
   color: var(--text-color);
   text-align: center;
@@ -91,6 +104,8 @@ button, .add-to-cart {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-top: auto; /* Зсуває кнопку вниз */
+  width: 100%; /* Робить кнопку на всю ширину */
 }
 
 button:hover, .add-to-cart:hover {
@@ -117,8 +132,12 @@ button:hover, .add-to-cart:hover {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  justify-content: space-between; /* Розподіляє простір рівномірно */
+  
 }
-
+.productProto h3, .productProto p {
+  flex-grow: 1; /* Змушує текст заповнювати доступний простір */
+}
 .productProto:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
@@ -142,6 +161,12 @@ button:hover, .add-to-cart:hover {
 }
 
 /* === Поле введення кількості === */
+/* Видаляємо стрілки в input type="number" для Chrome, Safari, Edge, Opera */
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 .quantity-input {
   width: auto;
   min-width: 60px;
@@ -333,7 +358,7 @@ select:focus {
   position: fixed;
   top: 80px;
   right: 20px;
-  width: 300px;
+  width: 320px;
   background-color: var(--primary-color);
   color: var(--text-color);
   border-radius: 10px;
@@ -350,6 +375,10 @@ select:focus {
   max-height: 200px;
   overflow-y: auto;
   margin-bottom: 15px;
+  overflow-x: hidden; /* Заборона горизонтальної прокрутки */
+  word-wrap: break-word; /* Перенесення слів, якщо вони занадто довгі */
+  text-align: left; /* Щоб текст був рівний */
+  padding-right: 10px; /* Додає трохи місця справа */
 }
 
 #cart-popup-total {
@@ -372,7 +401,6 @@ select:focus {
 #cart-popup-checkout:hover {
   background-color: var(--accent-hover-color);
 }
-
 
 /* === Пагінація === */
 #pagination {

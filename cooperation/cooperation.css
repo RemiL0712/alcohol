@@ -111,19 +111,13 @@ p {
   font-size: 1.1rem;
 }
 
-ul {
+ol {
   list-style: none;
   padding-left: 0;
 }
 
-ul li::before {
+ol li::before {
   content: '';
-}
-.rules {
-  border-bottom: 3px solid var(--accent-color);
-  border-right: 3px solid var(--accent-color);
-  border-left: 3px solid var(--accent-color);
-
 }
 
 
