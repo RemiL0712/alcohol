@@ -231,10 +231,8 @@ function loadProducts() {
 // Оновлення кількості продуктів на основі ширини екрану
 function updateProductsPerPage() {
   if (window.innerWidth <= 768) {
-    productsPerPage = 4;
-  } else {
-    productsPerPage = 8;
-  }
+    productsPerPage = 12;
+  } 
   loadProducts();
 }
 
@@ -391,4 +389,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 ;
+
+// Адаптація бургера
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+  const navMenu = document.querySelector('nav ul');
+  navMenu.classList.toggle('open');  // Додає/видаляє клас для відкриття меню
+});
 
