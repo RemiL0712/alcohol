@@ -460,11 +460,153 @@ footer .social-icons a:hover {
   color: var(--accent-hover-color);
 }
 /* ====== Адаптивність ====== */
+<<<<<<< HEAD
 @media (max-width: 1200px) {
   .product-list {
     grid-template-columns: repeat(3, minmax(200px, 1fr)); /* Трохи ширші колонки */
   }
 
+=======
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  nav ul {
+    display: flex;
+    position: static;
+    width: auto;
+    padding: 0;
+    box-shadow: none;
+  }
+}
+@media (max-width: 1200px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 15px 20px; /* Збільшено для збереження пропорцій */
+  }
+
+  footer {
+    padding: 20px 25px; /* Збільшено для комфортного вигляду */
+  }
+
+  .logo img {
+    margin-bottom: 15px; /* Збільшено для покращення вигляду */
+  }
+
+  #cart-icon-container {
+    top: 15%;
+  }
+
+  #cart-popup {
+    top: 15%;
+    right: 5%;
+  }
+
+  .quantity-btn {
+    width: 20%;
+    }
+
+  #search-container {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    right: 30%;
+  }
+
+  #search-icon {
+    font-size: 1.5rem;
+  }
+
+  #search-input {
+    width: 80%;
+    font-size: 1rem;
+    margin-left: 10px;
+    display: none;
+    position: absolute;
+    right: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  #search-input.active {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 300px; /* Збільшено для кращої видимості */
+    height: 100vh;
+    padding: 20px;
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+
+  nav ul.open {
+    display: block;
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    width: auto;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 12px 18px;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: absolute;
+    right: 20px; /* Відстань від правого краю */
+    top: 50%;
+    transform: translateY(-50%); /* Центрує по вертикалі */
+  }
+
+  nav ul.open li a {
+    display: block;
+    font-size: 1.2rem;
+    padding: 14px 20px;
+    text-align: left;
+    color: var(--text-color);
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid var(--primary-color);
+  }
+
+  nav ul.open li a.active {
+    background-color: var(--accent-color);
+    color: #fff;
+    border-bottom: 2px solid var(--accent-color);
+  }
+
+  .product-list {
+    grid-template-columns: repeat(3, minmax(200px, 1fr)); /* Трохи ширші колонки */
+  }
+
+>>>>>>> 59d9107 (Merge changes from remote)
   #sort-options, #filter-options {
     width: 100%;
     padding: 15px; /* Збільшено для більшої зручності */
