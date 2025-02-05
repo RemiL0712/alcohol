@@ -28,10 +28,22 @@
     </header>
     <main>
         <h1><center>Оформлення замовлення</center></h1>
+<<<<<<< HEAD
         <form id="order-form-element" action="../confirmation/confirmation.html" method="POST">
             <label>Ім'я: <input type="text" name="name" required></label><br>
             <label>Телефон: <input type="tel" name="phone" required></label><br>
             <label>Адреса: <input type="text" name="address" required></label><br>
+=======
+        <form id="order-form-element" action="https://api.web3forms.com/submit" method="POST" autocomplete="off">
+            <input type="hidden" name="access_key" value="5a54d1a9-fa9b-4f56-8393-d888f4ab20ee">
+            <!-- Товари в кошику (приховані інпути) -->
+            <input type="hidden" id="cart-items" name="cart_items">
+            <!-- Загальна сума (прихований інпут) -->
+            <input type="hidden" id="total-price" name="total_price">
+            <label>Ім'я: <input type="text" name="name" required autocomplete="off"></label><br>
+            <label>Телефон: <input type="tel" name="phone" required autocomplete="off"></label><br>
+            <label>Адреса: <input type="text" name="address" required autocomplete="off"></label><br>
+>>>>>>> b9b1bc6 (ABCD)
             <button type="submit">Відправити</button>
         </form>
     </main>

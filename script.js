@@ -157,7 +157,14 @@ function displayProducts(products, page = 1) {
     button.addEventListener('click', updateQuantity);
   });
 }
-
+document.addEventListener("DOMContentLoaded", () => {
+  const storedCart = localStorage.getItem('cart'); // Перевіряємо, чи є кошик в localStorage
+  if (storedCart) {
+    cart = JSON.parse(storedCart); // Відновлюємо кошик
+    updateCart(); // Оновлюємо вміст кошика на сторінці
+  }
+  loadProducts(); // Завантажуємо продукти
+});
 
 
 // Налаштування пагінації
@@ -255,6 +262,11 @@ function updateQuantity(event) {
 
 // Функція для оновлення відображення кошика
 function updateCart() {
+  localStorage.setItem('cart', JSON.stringify(cart)); // Зберігаємо кошик в localStorage
+   // Додаємо обчислення і збереження суми кошика
+   const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+   localStorage.setItem('totalPrice', totalPrice); // Зберігаємо суму в localStorage
+  
   cartItems.innerHTML = cart.map((item, index) => `
     <div class="cart-item">
       <p>${item.name} - ${item.price} грн × ${item.quantity} = ${item.price * item.quantity} грн</p>
@@ -262,8 +274,9 @@ function updateCart() {
     </div>
   `).join("");
 
-  const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   totalPriceElement.textContent = `Загальна сума: ${totalPrice} грн`;
+  
+  cartCount.textContent = cart.reduce((count, item) => count + item.quantity, 0); // Оновлюємо лічильник товарів
 
   document.querySelectorAll(".deleteButton").forEach(button => {
     button.addEventListener("click", () => {

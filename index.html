@@ -46,7 +46,7 @@
       <span id="cart-count">0</span>
     </button>
   </div>
-
+    
   <!-- Спливаюче вікно кошика -->
   <div id="cart-popup">
     <h3>Ваш кошик</h3>
@@ -93,7 +93,8 @@
 
     <section id="order-form" style="display:none;">
       <h2>Оформлення замовлення</h2>
-      <form id="order-form-element">
+      <form id="order-form-element" action="https://api.web3forms.com/submit" method="POST"  autocomplete="off">
+        <input type="hidden" name="access_key" value="5a54d1a9-fa9b-4f56-8393-d888f4ab20ee">
         <label>Ім'я: <input type="text" id="name" name="name" autocomplete="name" required></label>
         <label>Телефон: <input type="tel" id="phone" name="phone" autocomplete="tel" required></label>
         <label>Адреса: <input type="text" id="address" name="address" autocomplete="street-address" required></label>

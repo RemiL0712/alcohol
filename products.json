@@ -334,5 +334,173 @@
     "price": 349,
     "category": "vermouth",
     "image": "img/vermouth/10.jpg"
+  },
+  {
+    "id": 49,
+    "name": "Бренді Alexandrion Coffe 0.7 л",
+    "price": 365,
+    "category": "brendi",
+    "image": "img/brendi/17.jpg"
+  },
+  {
+    "id": 50,
+    "name": "Бренді Askaneli Reserve Limited Edition 5 років у коробці 0.5 л",
+    "price": 305,
+    "category": "brendi",
+    "image": "img/brendi/18.jpg"
+  },
+  {
+    "id": 51,
+    "name": "Бренді Alexandrion 7 років з 2 склянками 0.7 л",
+    "price": 1070,
+    "category": "brendi",
+    "image": "img/brendi/19.jpg"
+  },
+  {
+    "id": 52,
+    "name": "Бренді Alexandrion 7 років 0.5 л",
+    "price": 345,
+    "category": "brendi",
+    "image": "img/brendi/20.jpg"
+  },
+  {
+    "id": 53,
+    "name": "Бренді Kakheti Gate 3 роки 0.5 л",
+    "price": 239,
+    "category": "brendi",
+    "image": "img/brendi/21.jpg"
+  },
+  {
+    "id": 54,
+    "name": "Бренді Le Sage Duc de Strogan X.O. 0.5 л",
+    "price": 449,
+    "category": "brendi",
+    "image": "img/brendi/22.jpg"
+  },
+  {
+    "id": 55,
+    "name": "Бренді Kakheti Gate 4 роки 0.5 л",
+    "price": 245,
+    "category": "brendi",
+    "image": "img/brendi/23.jpg"
+  },
+  {
+    "id": 56,
+    "name": "Бренді Вітальний 5 років 0.5 л",
+    "price": 359,
+    "category": "brendi",
+    "image": "img/brendi/24.jpg"
+  },
+  {
+    "id": 57,
+    "name": "Бренді Довбуш Карпатський 3 роки 0.5 л",
+    "price": 225,
+    "category": "brendi",
+    "image": "img/brendi/25.jpg"
+  },
+  {
+    "id": 58,
+    "name": "Бренді АрАрАт Ахтамар 10 років у коробці 0.7 л N",
+    "price": 1249,
+    "category": "brendi",
+    "image": "img/brendi/26.jpg"
+  },
+  {
+    "id": 59,
+    "name": "Бренді Pedro Domecq Silver NEW 0.7 л",
+    "price": 349,
+    "category": "brendi",
+    "image": "img/brendi/27.jpg"
+  },
+  {
+    "id": 60,
+    "name": "Бренді Alexandrion 5 років з 2 склянками 0.7 л",
+    "price": 849,
+    "category": "brendi",
+    "image": "img/brendi/28.jpg"
+  },
+  {
+    "id": 61,
+    "name": "Бренді Alexandrion 5 років 1 л",
+    "price": 469,
+    "category": "brendi",
+    "image": "img/brendi/29.jpg"
+  },
+  {
+    "id": 62,
+    "name": "Бренді Прадід 8 років у тубусі 0.5 л",
+    "price": 399,
+    "category": "brendi",
+    "image": "img/brendi/30.jpg"
+  },
+  {
+    "id": 63,
+    "name": "Бренді Прошян 5 років у коробці 0.5 л",
+    "price": 389,
+    "category": "brendi",
+    "image": "img/brendi/31.jpg"
+  },
+  {
+    "id": 64,
+    "name": "Бренді Le Sage VS 3 роки 0.5 л",
+    "price": 378,
+    "category": "brendi",
+    "image": "img/brendi/32.jpg"
+  },
+  {
+    "id": 65,
+    "name": "Бренді Le Sage VS 3 роки 0.25 л",
+    "price": 209,
+    "category": "brendi",
+    "image": "img/brendi/33.jpg"
+  },
+  {
+    "id": 66,
+    "name": "Бренді Alhambra de Jerez Solera Reserva 1 л",
+    "price": 645,
+    "category": "brendi",
+    "image": "img/brendi/34.jpg"
+  },
+  {
+    "id": 67,
+    "name": "Бренді Arine 4 роки 0.5 л",
+    "price": 545,
+    "category": "brendi",
+    "image": "img/brendi/35.jpg"
+  },
+  {
+    "id": 68,
+    "name": "Бренді Alhambra de Jerez Solera Reserva 0.7 л",
+    "price": 555,
+    "category": "brendi",
+    "image": "img/brendi/36.jpg"
+  },
+  {
+    "id": 69,
+    "name": "Бренді Alvisa Ecological 5 років 0.5 л",
+    "price": 325,
+    "category": "brendi",
+    "image": "img/brendi/37.jpg"
+  },
+  {
+    "id": 70,
+    "name": "Бренді Old Mtskheta 3 роки 0.5 л",
+    "price": 289,
+    "category": "brendi",
+    "image": "img/brendi/38.jpg"
+  },
+  {
+    "id": 71,
+    "name": "Бренді Kakheti Gate 5 років 0.5 л",
+    "price": 259,
+    "category": "brendi",
+    "image": "img/brendi/39.jpg"
+  },
+  {
+    "id": 72,
+    "name": "Бренді Прошян 3 роки у коробці 0.5 л",
+    "price": 359,
+    "category": "brendi",
+    "image": "img/brendi/40.jpg"
   }
 ]
